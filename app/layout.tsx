@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// Import global styles (side-effect); TypeScript may need declaration for CSS imports
+// @ts-ignore: missing type declarations for CSS imports
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-gray-900 antialiased`}
       >
         {children}
       </body>
